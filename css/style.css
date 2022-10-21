@@ -1,0 +1,101 @@
+@import url(reset.css);
+
+body{
+   background-color: black;
+}
+
+.wraper{
+   min-height: 100%;
+}
+
+.page{
+   height: 2300px;
+}
+
+.car{
+  position: relative;
+  width:  1500px;
+  height: 1200px;
+  left: 200px;
+}
+
+/* Вогонь */
+.car .car__fire{
+   position: sticky;
+   top: 0px;
+   left: 0px;
+   border-radius: 0 0 45% 45%;
+   z-index: 0;
+   width: 1050px;
+   height: 600px;
+   }
+
+/* Мінйони */
+.car .car__minions{
+   position: fixed;
+   width: 160px;
+   left:570px;
+   top: 137px;
+   z-index: 1;
+}
+
+/*  Елементи авто */
+[class*="car__"]{
+   position: absolute;
+   left: 100px;
+   top: 130px;   
+   z-index: 2; 
+}
+
+.car__text{
+   font-size: 32px;
+   font-weight: 700;
+   margin-left: 200px;
+   color: orange;
+   position: fixed;
+   top: 600px;
+}
+
+/* Світло фар */
+.car .car__lite{
+   z-index: 3;
+}
+
+/* z-index  кузова*/
+.car .car__kuzov{
+   z-index: 4;
+}
+
+/* Прибираємо скло */
+.car__kuzov:hover~[class*="-sclo"]  {
+   opacity: 0.2;
+}
+
+/* Світро фари 1 */
+.car__kuzov:hover +.car__lite::before{
+   content: "";
+   border-radius: 50%;
+   background-color: rgb(226, 119, 43);
+   border-radius:9% 91% 46% 54% / 9% 49% 51% 91%  ;
+   height: 250px;
+   width: 550px;
+   opacity: 0.4;
+   position: absolute;
+   top:205px;
+   left:520px;
+}
+
+/* Світро фари 2 */
+.car__kuzov:hover +.car__lite::after{
+   content: "";
+   border-radius: 50%;
+   background-color: rgb(226, 119, 43);
+   border-radius:9% 91% 46% 54% / 9% 49% 51% 91%  ;
+   height: 250px;
+   width: 550px;
+   opacity: 0.3;
+   position: absolute;
+   top:180px;
+   left:835px;
+}
+
